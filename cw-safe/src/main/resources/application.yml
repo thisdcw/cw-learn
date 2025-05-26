@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cw-safe
+
+server:
+  servlet:
+    context-path: /api
+  port: 12090

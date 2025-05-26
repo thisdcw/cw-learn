@@ -7,17 +7,24 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author thisdcw
  */
 public class CustomRealm extends AuthorizingRealm {
 
+
+    private static final Logger log = LoggerFactory.getLogger(CustomRealm.class);
+
     @Resource
     private UserService userService;
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+
+        log.info("doGetAuthenticationInfo");
 
         //mock get user from database
         userService.mockException();
