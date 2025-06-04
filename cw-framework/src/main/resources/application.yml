@@ -1,13 +1,13 @@
 server:
   port: 8080
-  
+
 spring:
   application:
     name: cw-framework
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-    
+
 logging:
   config: classpath:logback.xml
   level:
@@ -17,6 +17,7 @@ logging:
 app:
   license:
     key: ${LICENSE_KEY:default-license-key-for-development}  # 从环境变量或系统属性中获取，默认为开发密钥
+    bypass: ${APP_LICENSE_BYPASS:true}  # 本地环境默认跳过许可证校验
     
 # JNA原生库路径配置
 jna:

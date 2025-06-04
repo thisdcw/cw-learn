@@ -15,6 +15,8 @@ public class TimeLockService {
 
     public static final Logger log = LoggerFactory.getLogger(TimeLockService.class);
     private static final int MACHINE_ID_BUFFER_SIZE = 256;
+    private static final int LICENSE_KEY_BUFFER_SIZE = 512;
+    private static final String FIXED_EXPIRE_DATE = "2025-12-31"; // 设置固定的过期时间
     private final TimeLockLibrary timeLockLibrary;
 
     public TimeLockService() {
@@ -29,12 +31,13 @@ public class TimeLockService {
      */
     public boolean validateLicense(String licenseKey) {
         try {
-            // 默认设置为一年后过期
-            Date expireDate = DateUtil.offsetMonth(new Date(), 12);
-            String expireDateStr = DateUtil.format(expireDate, "yyyy-MM-dd");
+            if (licenseKey == null || licenseKey.trim().isEmpty()) {
+                log.error("许可证密钥为空");
+                return false;
+            }
 
-            log.info("验证许可证，过期时间: {}", expireDateStr);
-            boolean valid = timeLockLibrary.validateTimeLock(expireDateStr, licenseKey);
+            log.info("验证许可证，固定过期时间: {}", FIXED_EXPIRE_DATE);
+            boolean valid = timeLockLibrary.validateTimeLock(FIXED_EXPIRE_DATE, licenseKey);
 
             if (!valid) {
                 log.warn("许可证验证失败，应用将停止运行");
@@ -58,6 +61,16 @@ public class TimeLockService {
      */
     public boolean validateLicense(Date expireDate, String licenseKey) {
         try {
+            if (expireDate == null) {
+                log.error("过期日期为空");
+                return false;
+            }
+            
+            if (licenseKey == null || licenseKey.trim().isEmpty()) {
+                log.error("许可证密钥为空");
+                return false;
+            }
+
             String expireDateStr = DateUtil.format(expireDate, "yyyy-MM-dd");
 
             log.info("验证许可证，过期时间: {}", expireDateStr);
@@ -85,6 +98,16 @@ public class TimeLockService {
      */
     public boolean setLicense(Date expireDate, String licenseKey) {
         try {
+            if (expireDate == null) {
+                log.error("过期日期为空");
+                return false;
+            }
+            
+            if (licenseKey == null || licenseKey.trim().isEmpty()) {
+                log.error("许可证密钥为空");
+                return false;
+            }
+            
             String expireDateStr = DateUtil.format(expireDate, "yyyy-MM-dd");
             
             log.info("设置许可证，过期时间: {}", expireDateStr);
@@ -152,5 +175,88 @@ public class TimeLockService {
             log.error("获取机器ID时发生错误", e);
             return null;
         }
+    }
+    
+    /**
+     * 为指定机器ID生成许可证密钥
+     *
+     * @param machineId 机器ID
+     * @return 生成的许可证密钥，如果生成失败则返回null
+     */
+    public String generateLicenseKey(String machineId) {
+        try {
+            if (machineId == null || machineId.trim().isEmpty()) {
+                log.error("机器ID为空");
+                return null;
+            }
+            
+            byte[] buffer = new byte[LICENSE_KEY_BUFFER_SIZE];
+            boolean success = timeLockLibrary.generateLicenseKey(machineId, buffer, buffer.length);
+            
+            if (success) {
+                // 转换字节数组为字符串，去除末尾的空字符
+                int length = 0;
+                while (length < buffer.length && buffer[length] != 0) {
+                    length++;
+                }
+                
+                String licenseKey = new String(buffer, 0, length);
+                log.info("成功为机器ID [{}] 生成许可证密钥", machineId);
+                return licenseKey;
+            } else {
+                log.error("为机器ID [{}] 生成许可证密钥失败", machineId);
+                return null;
+            }
+        } catch (Exception e) {
+            log.error("生成许可证密钥时发生错误", e);
+            return null;
+        }
+    }
+    
+    /**
+     * 为当前机器生成许可证密钥
+     *
+     * @return 生成的许可证密钥，如果生成失败则返回null
+     */
+    public String generateLicenseKeyForCurrentMachine() {
+        String machineId = getMachineId();
+        if (machineId == null) {
+            log.error("无法获取当前机器ID");
+            return null;
+        }
+        
+        return generateLicenseKey(machineId);
+    }
+    
+    /**
+     * 创建许可证信息对象
+     *
+     * @param customerName 客户名称
+     * @param expiryDate   过期日期
+     * @param licenseType  许可证类型
+     * @return 许可证信息对象
+     */
+    public LicenseInfo createLicenseInfo(String customerName, Date expiryDate, String licenseType) {
+        String machineId = getMachineId();
+        if (machineId == null) {
+            log.error("无法获取当前机器ID");
+            return null;
+        }
+        
+        String licenseKey = generateLicenseKey(machineId);
+        if (licenseKey == null) {
+            log.error("无法生成许可证密钥");
+            return null;
+        }
+        
+        return LicenseInfo.builder()
+                .customerName(customerName)
+                .issueDate(new Date())
+                .expiryDate(expiryDate)
+                .machineId(machineId)
+                .licenseKey(licenseKey)
+                .licenseType(licenseType)
+                .status(LicenseInfo.LicenseStatus.VALID)
+                .build();
     }
 } 
