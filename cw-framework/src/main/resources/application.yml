@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  
+spring:
+  application:
+    name: cw-framework
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    
+logging:
+  config: classpath:logback.xml
+  level:
+    root: info
+    com.cw.framework: debug
+    
+app:
+  license:
+    key: ${LICENSE_KEY:default-license-key-for-development}  # 从环境变量或系统属性中获取，默认为开发密钥
+    
+# JNA原生库路径配置
+jna:
+  library:
+    path: ${JNA_LIBRARY_PATH:classpath:native}
