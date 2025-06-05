@@ -2,7 +2,6 @@ package com.cw.framework.payment.v3.service.impl;
 
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.crypto.digest.MD5;
 import cn.hutool.json.JSONUtil;
 import com.cw.framework.payment.v3.config.WxProperties;
 import com.cw.framework.payment.v3.model.MiniProgramPayRequest;
@@ -25,7 +24,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.KeyFactory;
+import java.security.PrivateKey;
+import java.security.Signature;
+import java.security.spec.PKCS8EncodedKeySpec;
 import java.time.Instant;
+import java.util.Base64;
 
 /**
  * @author thisdcw
@@ -168,8 +175,8 @@ public class PayServiceImpl implements PayService {
         // 构建签名原串
         String signStr = wxProperties.getAppId() + "\n" + timeStamp + "\n" + nonceStr + "\n" + packageStr + "\n";
 
-        // 生成签名（这里简化处理，实际应使用RSA签名）
-        String paySign = MD5.create().digestHex(signStr);
+        // 生成签名（使用RSA签名）
+        String paySign = generatePaySign(signStr);
 
         MiniProgramPayResponse response = new MiniProgramPayResponse();
         response.setTimeStamp(timeStamp);
@@ -179,6 +186,62 @@ public class PayServiceImpl implements PayService {
         response.setPaySign(paySign);
 
         return response;
+    }
+
+    /**
+     * 生成微信支付V3签名
+     *
+     * @param signStr 签名原串
+     * @return Base64编码的签名
+     */
+    private String generatePaySign(String signStr) {
+        try {
+            // 获取商户私钥
+            PrivateKey privateKey = getPrivateKey();
+
+            // 使用SHA256withRSA算法签名
+            Signature signature = Signature.getInstance("SHA256withRSA");
+            signature.initSign(privateKey);
+            signature.update(signStr.getBytes(StandardCharsets.UTF_8));
+
+            // 生成签名并进行Base64编码
+            byte[] signBytes = signature.sign();
+            return Base64.getEncoder().encodeToString(signBytes);
+
+        } catch (Exception e) {
+            logger.error("生成微信支付签名失败", e);
+            throw new RuntimeException("生成微信支付签名失败", e);
+        }
+    }
+
+    /**
+     * 获取商户私钥
+     *
+     * @return 私钥对象
+     */
+    private PrivateKey getPrivateKey() {
+        try {
+            // 从文件路径读取私钥内容
+            String privateKeyContent = Files.readString(Paths.get(wxProperties.getPrivateKeyPath()), StandardCharsets.UTF_8);
+
+            // 移除PEM格式的头尾标识和换行符
+            privateKeyContent = privateKeyContent
+                    .replace("-----BEGIN PRIVATE KEY-----", "")
+                    .replace("-----END PRIVATE KEY-----", "")
+                    .replaceAll("\\s", "");
+
+            // Base64解码
+            byte[] keyBytes = Base64.getDecoder().decode(privateKeyContent);
+
+            // 生成私钥
+            PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
+            KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+            return keyFactory.generatePrivate(keySpec);
+
+        } catch (Exception e) {
+            logger.error("加载商户私钥失败", e);
+            throw new RuntimeException("加载商户私钥失败", e);
+        }
     }
 
     @Override

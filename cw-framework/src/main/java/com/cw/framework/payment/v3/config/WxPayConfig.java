@@ -2,7 +2,10 @@ package com.cw.framework.payment.v3.config;
 
 import com.wechat.pay.java.core.Config;
 import com.wechat.pay.java.core.RSAAutoCertificateConfig;
+import com.wechat.pay.java.service.payments.app.AppService;
+import com.wechat.pay.java.service.payments.h5.H5Service;
 import com.wechat.pay.java.service.payments.jsapi.JsapiService;
+import com.wechat.pay.java.service.payments.nativepay.NativePayService;
 import com.wechat.pay.java.service.refund.RefundService;
 import lombok.Data;
 import org.slf4j.Logger;
@@ -44,4 +47,18 @@ public class WxPayConfig {
         return new RefundService.Builder().config(config).build();
     }
 
+    @Bean
+    public H5Service createH5Service(Config config) {
+        return new H5Service.Builder().config(config).build();
+    }
+
+    @Bean
+    public NativePayService createNativeService(Config config) {
+        return new NativePayService.Builder().config(config).build();
+    }
+
+    @Bean
+    public AppService createAppService(Config config) {
+        return new AppService.Builder().config(config).build();
+    }
 }

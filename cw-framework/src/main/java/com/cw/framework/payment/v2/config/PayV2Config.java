@@ -1,5 +1,6 @@
 package com.cw.framework.payment.v2.config;
 
+import com.cw.framework.payment.v2.service.WxPayV2Service;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

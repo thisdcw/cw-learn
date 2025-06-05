@@ -17,7 +17,6 @@ public class WxPayV2Properties {
 
     /**
      * 微信支付商户号
-     * (V3商户模式需要)
      */
     private String mchId;
 

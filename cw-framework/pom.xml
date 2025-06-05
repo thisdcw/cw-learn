@@ -9,10 +9,21 @@
     <name>cw-framework</name>
     <description>使用jna+springboot2搭建的带安全锁的项目</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <springboot.version>2.6.6</springboot.version>
     </properties>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.google.zxing/core -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
         <dependency>
             <groupId>jakarta.validation</groupId>
