@@ -10,6 +10,7 @@
     <artifactId>cw-shiro</artifactId>
     <packaging>jar</packaging>
 
+
     <dependencies>
         <!-- shiro -->
         <dependency>

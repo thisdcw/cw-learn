@@ -24,6 +24,17 @@ jna:
   library:
     path: ${JNA_LIBRARY_PATH:classpath:native}
 
+# 虚拟币支付配置
+coin:
+  public-key: your_public_key
+  private-key: your_private_key
+  ipn-secret: your_ipn_secret
+  callback-url: https://yourdomain.com/coin/ipn
+# 虎皮椒支付配置
+hupi:
+  appid: your_appid
+  app-secret: your_appsecret
+  notify-url: https://yourdomain.com/pay/notify
 # 微信支付配置
 wechat:
   pay:

@@ -1,47 +1,36 @@
-2025-05-20 14:27:25.695 [main] INFO  com.cw.shiro.CwShiroApplication - Starting CwShiroApplication using Java 17.0.15 with PID 8448 (D:\code\cw-learn\cw-shiro\target\classes started by Admin in D:\code\cw-learn)
-2025-05-20 14:27:25.699 [main] INFO  com.cw.shiro.CwShiroApplication - The following 1 profile is active: "local"
-2025-05-20 14:27:26.648 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2025-05-20 14:27:26.659 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-05-20 14:27:26.661 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-05-20 14:27:26.662 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
-2025-05-20 14:27:26.790 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
-2025-05-20 14:27:26.790 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1036 ms
-2025-05-20 14:27:27.132 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-05-20 14:27:27.152 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
-2025-05-20 14:27:27.159 [main] INFO  com.cw.shiro.CwShiroApplication - Started CwShiroApplication in 2.108 seconds (process running for 2.954)
-2025-05-20 14:27:32.366 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-20 14:27:32.366 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-05-20 14:27:32.367 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-05-20 14:27:32.393 [http-nio-8080-exec-1] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.cw.shiro.controller.LoginController
-2025-05-20 14:27:32.405 [http-nio-8080-exec-1] INFO  o.a.s.s.m.AbstractValidatingSessionManager - Enabling session validation scheduler...
-2025-05-20 14:28:48.707 [main] INFO  com.cw.shiro.CwShiroApplication - Starting CwShiroApplication using Java 17.0.15 with PID 22216 (D:\code\cw-learn\cw-shiro\target\classes started by Admin in D:\code\cw-learn)
-2025-05-20 14:28:48.709 [main] INFO  com.cw.shiro.CwShiroApplication - The following 1 profile is active: "local"
-2025-05-20 14:28:49.442 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2025-05-20 14:28:49.450 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-05-20 14:28:49.450 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-05-20 14:28:49.451 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
-2025-05-20 14:28:49.534 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
-2025-05-20 14:28:49.534 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 790 ms
-2025-05-20 14:28:49.814 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-05-20 14:28:49.830 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
-2025-05-20 14:28:49.836 [main] INFO  com.cw.shiro.CwShiroApplication - Started CwShiroApplication in 1.628 seconds (process running for 2.158)
-2025-05-20 14:29:23.546 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-20 14:29:23.546 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-05-20 14:29:23.547 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-05-20 14:29:23.572 [http-nio-8080-exec-1] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.cw.shiro.controller.LoginController
-2025-05-20 14:29:23.580 [http-nio-8080-exec-1] INFO  com.cw.shiro.config.CustomRealm - doGetAuthenticationInfo
-2025-05-20 14:29:23.583 [http-nio-8080-exec-1] INFO  o.a.s.s.m.AbstractValidatingSessionManager - Enabling session validation scheduler...
-2025-06-04 21:55:24.925 [main] INFO  com.cw.shiro.CwShiroApplication - Starting CwShiroApplication using Java 17.0.15 with PID 19028 (D:\Projects\ideaProject\cw-learn\cw-shiro\target\classes started by thisdcw in D:\Projects\ideaProject\cw-learn)
-2025-06-04 21:55:24.927 [main] INFO  com.cw.shiro.CwShiroApplication - The following 1 profile is active: "local"
-2025-06-04 21:55:25.517 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2025-06-04 21:55:25.524 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-06-04 21:55:25.524 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-04 21:55:25.524 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
-2025-06-04 21:55:25.594 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
-2025-06-04 21:55:25.594 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 638 ms
-2025-06-04 21:55:25.828 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-06-04 21:55:25.843 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
-2025-06-04 21:55:25.847 [main] INFO  com.cw.shiro.CwShiroApplication - Started CwShiroApplication in 1.407 seconds (process running for 2.006)
-2025-06-04 21:55:41.681 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-04 21:55:41.681 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-04 21:55:41.682 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-06 14:42:09.129 [main] INFO  com.cw.shiro.CwShiroApplication - Starting CwShiroApplication using Java 17.0.15 with PID 40508 (D:\code\cw-learn\cw-shiro\target\classes started by Admin in D:\code\cw-learn)
+2025-06-06 14:42:09.142 [main] INFO  com.cw.shiro.CwShiroApplication - The following 1 profile is active: "local"
+2025-06-06 14:42:15.205 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-06-06 14:42:15.273 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-06 14:42:15.276 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-06 14:42:15.277 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2025-06-06 14:42:16.031 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-06-06 14:42:16.033 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6679 ms
+2025-06-06 14:42:18.623 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-06 14:42:18.707 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2025-06-06 14:42:18.798 [main] INFO  com.cw.shiro.CwShiroApplication - Started CwShiroApplication in 12.232 seconds (process running for 20.179)
+2025-06-06 14:42:55.543 [main] INFO  com.cw.shiro.CwShiroApplication - Starting CwShiroApplication using Java 17.0.15 with PID 38464 (D:\code\cw-learn\cw-shiro\target\classes started by Admin in D:\code\cw-learn)
+2025-06-06 14:42:55.549 [main] INFO  com.cw.shiro.CwShiroApplication - The following 1 profile is active: "local"
+2025-06-06 14:43:01.636 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-06-06 14:43:01.707 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-06 14:43:01.710 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-06 14:43:01.711 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2025-06-06 14:43:02.502 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-06-06 14:43:02.503 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6739 ms
+2025-06-06 14:43:05.134 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-06 14:43:05.220 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2025-06-06 14:43:05.317 [main] INFO  com.cw.shiro.CwShiroApplication - Started CwShiroApplication in 12.25 seconds (process running for 20.635)
+2025-06-06 14:45:05.099 [main] INFO  com.cw.shiro.CwShiroApplication - Starting CwShiroApplication using Java 17.0.15 with PID 11644 (D:\code\cw-learn\cw-shiro\target\classes started by Admin in D:\code\cw-learn)
+2025-06-06 14:45:05.107 [main] INFO  com.cw.shiro.CwShiroApplication - The following 1 profile is active: "local"
+2025-06-06 14:45:11.330 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-06-06 14:58:34.948 [main] INFO  com.cw.shiro.CwShiroApplication - Starting CwShiroApplication using Java 17.0.15 with PID 34872 (D:\code\cw-learn\cw-shiro\target\classes started by Admin in D:\code\cw-learn)
+2025-06-06 14:58:38.124 [main] INFO  com.cw.shiro.CwShiroApplication - The following 1 profile is active: "local"
+2025-06-06 15:15:58.251 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-06-06 15:15:58.350 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-06 15:15:58.369 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-06 15:15:58.370 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2025-06-06 15:15:59.150 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-06-06 15:15:59.151 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7354 ms
+2025-06-06 15:16:02.145 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-06 15:16:02.261 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2025-06-06 15:16:45.626 [main] INFO  com.cw.shiro.CwShiroApplication - Started CwShiroApplication in 1463.591 seconds (process running for 1498.491)
