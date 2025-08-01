@@ -1,0 +1,33 @@
+{
+  "userId": 1,
+  "userName": "A",
+  "level": 2,
+  "depth": 0,
+  "performance": 12000,
+  "benefit": null,
+  "children": {
+    "userId": 2,
+    "userName": "B",
+    "level": 3,
+    "depth": 1,
+    "performance": 9000,
+    "benefit": null,
+    "children": {
+      "userId": 3,
+      "userName": "C",
+      "level": 1,
+      "depth": 2,
+      "performance": 7000,
+      "benefit": null,
+      "children": {
+        "userId": 4,
+        "userName": "D",
+        "level": 4,
+        "depth": 3,
+        "performance": 15000,
+        "benefit": null,
+        "children": null
+      }
+    }
+  }
+}
