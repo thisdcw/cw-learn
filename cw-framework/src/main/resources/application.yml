@@ -56,3 +56,20 @@ wechat:
       api-v3-key: your-api-v3-key-32-characters-long
       # 支付结果通知地址
       notify-url: https://your-domain.com/api/wechat/pay/notify
+
+fy:
+  merchant-private-key: >
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCC/7w/vwsTbDHU0o6FzV0Ui783nrfevGeCu8dRzZIbeyb79aUEGT9c1x0w+UrBIJj4ISPy8Hj
+    /2gAp5RSMfJDwsqtp5OTo4HnRqeUUz0lyHdzLOGrBAqZIa+a143ETaIgayh4TpgGzbwrAtcO7McpnNN7z9LoACmDHphzvBO5TW5NWpW+3JjwEe8uNnJTH8d9yT6
+    lzEuDr+yTmqqHNfxfwHKZJWpr6FkRyAEEtMCM3pmT5mRbPjZkZac+ku1yA2qMTkBq4hnRCEAGi8FA9m9+XkmbpO1zkK6PAKQI2zj/DPgBNZ5MoEkJCGbdxTCYYS
+    9cne0wwb5Ngexq2s8ip78s9AgMBAAECggEAQbfmStyew9mtjiUrlviVz67j+RVJDRbbnvxxXBqTR/IadqCfblT0MrFAVcdat1SRKToG/OOi8Ef/eQURsAD1/arE
+    z9Ui+alTs9lVsYDkSbmtgM4G0Flx7jcjgPBfU+tHDJmFSToo9EmqzU7iqNCrx+cASsblYQvTzZUKQuboYSyBolB7Kq1FaHUrWbhmzWGqguaHhuAbkJjgCrLkf5d
+    EB0CBpS/L4XWOnDRAuEs8aOM9YcZieoQBNFJdTgNos1bo3VmYhOEEkXKc2j/emXJcCOMfucevmD6c0I/OAxA7C8MPAxo+uXbMLuQAuhtgJboztRLs6A5j70tfBj
+    SAbh05CQKBgQDEq3xBi7+diJxHXjf7B/6Ds4Jr6ZGsmXjgxKqqB8vvOInlrZgJuO1tDGOwr/pGvl3hBDYNEKZWnlFsxfjTuCC4obFTBjF2mrTNS/Nw5QxDgdWBT
+    pZNT9r+J5YQOEcJk1N9lw9zmtSXhH1YpTwdQFBKZyl+Fa0OOMcEoCTscsa3BwKBgQCqhJYZmsILvoUWSA/lf0n9gqbZrIPZK273cMJqRlUWUlisuXYoyG24EQOK
+    JZFEg6BT9JwsI4vNotsUTYXrcnDY1H0b5QZaVsYX4bg0qJzls/qXXBQBfJCkey72xLBui3+ZCtUAlHBv0N9x62jj+XYUlQm8FEl9Ly8LyEMYDoC2mwKBgFQtnjK
+    j8TEpbtKxRj7BTjPq2rD7uSlqSy3Rn8bFLYnH5mYTZlcK+zzIp8bRm8s54g7U8Zmn/bpnayymk/ly/zZnpvGFXhiI4UhZ8Onqb9RZNxxwma6ftnlAUl/A5s73ay
+    3/QVLW+5Wa1NfjaZaPl44xF7Zq6raCoNSfAw7dlaZzAoGAZbbjJnDXMVQ7ZRglS1uLkko+JvguSfwLnFRJ1EUR+leyh421uwwbzsFvYBeauMjfeVUfV4D4ovhzQ
+    IAh01mXkO/nlR0flgHO9m3xiI/Pz4F1iJYnZN+eFE9aq16Wc8qImY0Jk+f3zetFblnjXqHu2sYwYV2knKTppliWFSKJiuMCgYEAuA9cGG+dGG+uNQ4kQYgPgS4X
+    U9cSScW55T/2ZJUbdz3nk2EUBPOg4Fzb/qqHFEeHXBuST7M2m5TeYBNnsdK1kR3GjQnmyiLReyfIOgcyohSgxDl0KXqC5R1bsWC36J5smOlPjQ0KaBT7NEYmUTB
+    Cm6NrW05q8gcrcC2guKiM6Hw=
