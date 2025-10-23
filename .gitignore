@@ -1,4 +1,3 @@
-logs/
 target/
 .xcodemap/
 !.mvn/wrapper/maven-wrapper.jar
