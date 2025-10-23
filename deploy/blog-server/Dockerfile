@@ -8,7 +8,7 @@ WORKDIR /app
 # 复制 jar 包
 # 注意：这里使用了通配符 *.jar，假设 target 目录只有一个 jar 包
 # 如果不是，请修改为你的确切 jar 包名称
-COPY target/*.jar app.jar
+COPY blog-server.jar app.jar
 
 # 暴露你指定的 12345 端口
 EXPOSE 12345
