@@ -1,0 +1,175 @@
+graph TD
+    Start([开始学习 JUC]) --> Stage1[阶段一: 线程基础与并发理论]
+
+    Stage1 --> S1_1[线程基础]
+    Stage1 --> S1_2[并发三大特性]
+    Stage1 --> S1_3[Java 内存模型 JMM]
+
+    S1_1 --> S1_1_1[进程 vs 线程]
+    S1_1 --> S1_1_2[线程生命周期]
+    S1_1 --> S1_1_3[线程创建方式]
+
+    S1_2 --> S1_2_1[可见性 volatile]
+    S1_2 --> S1_2_2[原子性 synchronized]
+    S1_2 --> S1_2_3[有序性 happens-before]
+
+    S1_3 --> S1_3_1[主内存与工作内存]
+    S1_3 --> S1_3_2[内存操作规则]
+    S1_3 --> S1_3_3[happens-before 规则]
+
+    Stage1 --> Practice1[实践: 线程状态演示<br/>volatile 问题复现<br/>生产者-消费者模型]
+    Practice1 --> Stage2[阶段二: JUC 核心组件]
+
+    Stage2 --> S2_1[锁机制]
+    Stage2 --> S2_2[原子类 Atomic]
+    Stage2 --> S2_3[并发容器]
+    Stage2 --> S2_4[线程池]
+    Stage2 --> S2_5[同步工具类]
+
+    S2_1 --> S2_1_1[synchronized 深入]
+    S2_1 --> S2_1_2[ReentrantLock]
+    S2_1 --> S2_1_3[ReadWriteLock]
+    S2_1 --> S2_1_4[StampedLock]
+
+    S2_2 --> S2_2_1[AtomicInteger/Long]
+    S2_2 --> S2_2_2[AtomicReference]
+    S2_2 --> S2_2_3[LongAdder]
+
+    S2_3 --> S2_3_1[ConcurrentHashMap]
+    S2_3 --> S2_3_2[CopyOnWriteArrayList]
+    S2_3 --> S2_3_3[BlockingQueue 系列]
+
+    S2_4 --> S2_4_1[ThreadPoolExecutor]
+    S2_4 --> S2_4_2[核心参数配置]
+    S2_4 --> S2_4_3[拒绝策略]
+    S2_4 --> S2_4_4[ForkJoinPool]
+
+    S2_5 --> S2_5_1[CountDownLatch]
+    S2_5 --> S2_5_2[CyclicBarrier]
+    S2_5 --> S2_5_3[Semaphore]
+    S2_5 --> S2_5_4[Exchanger]
+
+    Stage2 --> Practice2[实践: 手写线程池<br/>线程安全单例<br/>秒杀库存扣减]
+    Practice2 --> Stage3[阶段三: 并发设计模式]
+
+    Stage3 --> S3_1[生产者-消费者模式]
+    Stage3 --> S3_2[两阶段终止模式]
+    Stage3 --> S3_3[Guarded Suspension]
+    Stage3 --> S3_4[Worker Thread 模式]
+    Stage3 --> S3_5[Thread-Per-Message]
+
+    Stage3 --> Practice3[实践: 异步日志框架<br/>RPC 超时等待<br/>任务调度框架]
+    Practice3 --> Stage4[阶段四: JVM 与并发底层]
+
+    Stage4 --> S4_1[对象内存布局]
+    Stage4 --> S4_2[锁升级机制]
+    Stage4 --> S4_3[volatile 实现]
+    Stage4 --> S4_4[CAS 底层原理]
+    Stage4 --> S4_5[AQS 框架]
+
+    S4_1 --> S4_1_1[对象头 Mark Word]
+    S4_1 --> S4_1_2[类型指针]
+    S4_1 --> S4_1_3[实例数据]
+
+    S4_2 --> S4_2_1[偏向锁]
+    S4_2 --> S4_2_2[轻量级锁]
+    S4_2 --> S4_2_3[重量级锁]
+
+    S4_3 --> S4_3_1[内存屏障]
+    S4_3 --> S4_3_2[lock 前缀指令]
+
+    S4_4 --> S4_4_1[Unsafe 类]
+    S4_4 --> S4_4_2[cmpxchg 指令]
+    S4_4 --> S4_4_3[ABA 问题]
+
+    S4_5 --> S4_5_1[state 状态]
+    S4_5 --> S4_5_2[CLH 队列]
+    S4_5 --> S4_5_3[独占/共享模式]
+
+    Stage4 --> Practice4[实践: JOL 分析对象<br/>观察锁升级过程<br/>手写简化版 AQS]
+    Practice4 --> Stage5[阶段五: 高并发业务与优化]
+
+    Stage5 --> S5_1[缓存设计]
+    Stage5 --> S5_2[限流与降级]
+    Stage5 --> S5_3[分布式锁]
+    Stage5 --> S5_4[异步编程]
+    Stage5 --> S5_5[性能优化]
+
+    S5_1 --> S5_1_1[本地缓存]
+    S5_1 --> S5_1_2[Redis 缓存]
+    S5_1 --> S5_1_3[缓存一致性]
+
+    S5_2 --> S5_2_1[令牌桶算法]
+    S5_2 --> S5_2_2[漏桶算法]
+    S5_2 --> S5_2_3[熔断降级]
+
+    S5_3 --> S5_3_1[Redis 分布式锁]
+    S5_3 --> S5_3_2[ZooKeeper 分布式锁]
+    S5_3 --> S5_3_3[Redisson 框架]
+
+    S5_4 --> S5_4_1[CompletableFuture]
+    S5_4 --> S5_4_2[响应式编程]
+    S5_4 --> S5_4_3[异步回调]
+
+    S5_5 --> S5_5_1[锁优化]
+    S5_5 --> S5_5_2[减少锁粒度]
+    S5_5 --> S5_5_3[无锁化]
+    S5_5 --> S5_5_4[避免伪共享]
+
+    Stage5 --> Practice5[实践: 秒杀系统<br/>延迟队列<br/>二级缓存方案]
+    Practice5 --> Stage6[阶段六: 实战项目]
+
+    Stage6 --> P1[项目1: 多线程下载器]
+    Stage6 --> P2[项目2: LRU 缓存]
+    Stage6 --> P3[项目3: 任务调度框架]
+    Stage6 --> P4[项目4: 并发测试工具]
+
+    P1 --> P1_1[断点续传]
+    P1 --> P1_2[分段下载]
+    P1 --> P1_3[进度监控]
+
+    P2 --> P2_1[线程安全]
+    P2 --> P2_2[读写锁]
+    P2 --> P2_3[LRU 算法]
+
+    P3 --> P3_1[定时任务]
+    P3 --> P3_2[延迟任务]
+    P3 --> P3_3[任务管理]
+
+    P4 --> P4_1[并发压测]
+    P4 --> P4_2[性能统计]
+    P4 --> P4_3[报告生成]
+
+    Stage6 --> Interview[面试准备]
+
+    Interview --> I1[基础知识 20 题]
+    Interview --> I2[原理深挖 15 题]
+    Interview --> I3[业务场景 15 题]
+    Interview --> I4[模拟面试 30 题]
+
+    I1 --> Master[掌握 JUC 并发编程]
+I2 --> Master
+I3 --> Master
+I4 --> Master
+
+Master --> Advanced[进阶学习]
+Advanced --> A1[Disruptor 框架]
+Advanced --> A2[Netty 并发模型]
+Advanced --> A3[响应式编程 Reactor]
+Advanced --> A4[协程 Virtual Thread]
+
+style Start fill:#e1f5ff
+style Stage1 fill:#fff4e6
+style Stage2 fill:#fff4e6
+style Stage3 fill:#fff4e6
+style Stage4 fill:#fff4e6
+style Stage5 fill:#fff4e6
+style Stage6 fill:#fff4e6
+style Practice1 fill:#e8f5e9
+style Practice2 fill:#e8f5e9
+style Practice3 fill:#e8f5e9
+style Practice4 fill:#e8f5e9
+style Practice5 fill:#e8f5e9
+style Interview fill:#fce4ec
+style Master fill:#c8e6c9
+style Advanced fill:#b2dfdb

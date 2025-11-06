@@ -1,0 +1,11 @@
+flowchart TD
+    A[无锁状态Unlocked] --> B[偏向锁Biased Lock]
+B --> C{是否有其他线程竞争?}
+C -- 否 --> B
+C -- 是 --> D[轻量级锁(Lightweight Lock)]
+D --> E{自旋获取成功?}
+E -- 是 --> D
+E -- 否 --> F[重量级锁(Heavyweight Lock)]
+F --> G[线程阻塞并挂起]
+G --> H[释放锁后唤醒等待线程]
+H --> B
