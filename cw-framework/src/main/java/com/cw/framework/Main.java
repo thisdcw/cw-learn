@@ -29,9 +29,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        testOrder();
+        testOrder();
 
-        testSkuInfo();
+//        testSkuInfo();
 
     }
 
@@ -41,7 +41,7 @@ public class Main {
         dto.setShipAreaCode("330000000000,330100000000,330112000000");
         List<SkuDTO> skuList = new ArrayList<>();
         SkuDTO sku = new SkuDTO();
-        sku.setSku_id(78);
+        sku.setSku_id(4665547);
         sku.setSku_num(1);
         skuList.add(sku);
         dto.setSku_list(skuList);
