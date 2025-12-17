@@ -1,1 +1,0 @@
-2025-11-17 10:55:24.114 [main] INFO  com.cw.framework.utils.SupplyUtils - response: {"status":"success","code":200,"message":"success","data":[{"order_sn":"ZX2025111797565657485","sku_list":[{"sku_id":4665547,"sku":"1C19355E776D4D7885B34706B387EF55","sku_num":1,"unit_price":"13.65"}],"price":13.65,"postage":0,"pay_price":14.05,"service_money":0.4}]}
