@@ -15,6 +15,7 @@
         <module>cw-algorithm</module>
         <module>cw-demo</module>
         <module>cw-lab</module>
+        <module>cw-design-patterns</module>
     </modules>
 
     <properties>
