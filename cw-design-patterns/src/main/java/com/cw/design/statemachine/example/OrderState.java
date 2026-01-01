@@ -37,4 +37,38 @@ public interface OrderState {
         throw new IllegalStateException("不可确认收货");
     }
 
+    /**
+     * 分享
+     */
+    default void share(OrderContext ctx){
+        throw new IllegalStateException("不允许分享");
+    }
+
+    /**
+     * 评论
+     */
+    default void comment(OrderContext ctx){
+        throw new IllegalStateException("不允许评论");
+    }
+
+    /**
+     * 申请退款
+     */
+    default void applyRefund(OrderContext ctx){
+        throw new IllegalStateException("不允许申请退款");
+    }
+
+    /**
+     * 退款
+     */
+    default void refund(OrderContext ctx){
+        throw new IllegalStateException("不允许退款");
+    }
+
+    /**
+     * 取消退款
+     */
+    default void cancelRefund(OrderContext ctx){
+        throw new IllegalStateException("不允许取消退款");
+    }
 }
