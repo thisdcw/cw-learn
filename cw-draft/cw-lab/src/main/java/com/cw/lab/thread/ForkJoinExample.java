@@ -11,7 +11,7 @@ public class ForkJoinExample {
 
     // 任务类：递归分治求和
     static class SumTask extends RecursiveTask<Long> {
-        private static final int THRESHOLD = 10_000; // 拆分阈值
+        private static final int THRESHOLD = 1_000; // 拆分阈值
         private final long start;
         private final long end;
 
@@ -46,7 +46,7 @@ public class ForkJoinExample {
 
     public static void main(String[] args) {
         long start = 1;
-        long end = 100_000_000;
+        long end = 100_000_000_0;
 
         // 默认并行度 = CPU核心数
         ForkJoinPool pool = new ForkJoinPool();
@@ -59,6 +59,18 @@ public class ForkJoinExample {
         System.out.println("耗时: " + (endTime - startTime) + " ms");
 
         pool.shutdown();
+
+        int index = 0;
+        long sum = 0;
+        startTime = System.currentTimeMillis();
+        while (index <= end) {
+            sum += index;
+            index++;
+        }
+        endTime = System.currentTimeMillis();
+
+        System.out.println("结果: " + sum);
+        System.out.println("耗时: " + (endTime - startTime) + " ms");
     }
 
 }
