@@ -5,7 +5,7 @@ import com.cw.design.statemachine.example.OrderState;
 import com.cw.design.statemachine.example.OrderStatus;
 
 /**
- * 支付后允许的操作
+ * 未发货允许的操作
  *
  * @author thisdcw
  * @date 2025年12月31日 13:46
@@ -16,7 +16,7 @@ public class UnShipState implements OrderState {
     public void ship(OrderContext ctx) {
         System.out.println("发货完成!");
         ctx.setOrderStatus(OrderStatus.UN_RECEIVE);
-        ctx.setOrderState(new UnConfirmState());
+        ctx.setOrderState(new UnReceiveState());
     }
 
     @Override

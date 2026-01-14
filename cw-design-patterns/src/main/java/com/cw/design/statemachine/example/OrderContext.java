@@ -3,6 +3,13 @@ package com.cw.design.statemachine.example;
 import com.cw.design.statemachine.example.state.*;
 import lombok.Data;
 
+import java.util.Map;
+import java.util.Set;
+
+import static com.cw.design.statemachine.example.OrderAction.*;
+import static com.cw.design.statemachine.example.OrderAction.DO_REFUND_APPROVED;
+import static com.cw.design.statemachine.example.OrderStatus.*;
+
 /**
  * 订单上下文
  *
@@ -19,35 +26,35 @@ public class OrderContext {
     //业务层面需要指定某些商品是否允许退款
     private boolean canRefund;
 
+    Map<OrderStatus, Set<OrderAction>> ALLOW_MAP = Map.of(
+            UN_PAY, Set.of(DO_PAY, DO_CANCEL),
+            UN_SHIP, Set.of(DO_SHIP, DO_REFUND_REQUEST),
+            UN_RECEIVE, Set.of(DO_RECEIVE, DO_REFUND_REQUEST),
+            REFUND_REQUESTED, Set.of(DO_REFUND_APPROVED, DO_REFUND_CANCEL),
+            COMPLETED, Set.of()
+    );
+
+
     /**
      * 在 springboot 项目中优化成自动注入
      */
     public OrderContext(OrderStatus orderStatus, boolean canRefund) {
         this.orderStatus = orderStatus;
         this.canRefund = canRefund;
-        switch (orderStatus) {
-            case UN_PAY:
-                orderState = new UnPayState();
-                break;
-            case UN_SHIP:
-                orderState = new UnShipState();
-                break;
-            case UN_RECEIVE:
-                orderState = new UnConfirmState();
-                break;
-            case REFUND_REQUESTED:
-                orderState = new UnConfirmRefundState();
-                break;
-            case REFUND_APPROVED:
-                orderState = new ConfirmRefundState();
-                break;
-            case COMPLETED:
-                orderState = new CompleteState();
-                break;
-            default:
-                throw new IllegalStateException("不支持的订单类型" + orderStatus);
+        this.orderState = orderStatus.getOrderState();
+        if (orderState == null) {
+            throw new IllegalStateException("改状态不允许操作");
         }
     }
+
+    public void ruleCheck(OrderContext ctx, OrderAction action) {
+        if (!ALLOW_MAP
+                .getOrDefault(ctx.getOrderStatus(), Set.of())
+                .contains(action)) {
+            throw new IllegalStateException("状态不允许该操作");
+        }
+    }
+
 
     /**
      * 评论

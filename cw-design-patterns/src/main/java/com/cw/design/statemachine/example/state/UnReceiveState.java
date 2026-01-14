@@ -5,11 +5,11 @@ import com.cw.design.statemachine.example.OrderState;
 import com.cw.design.statemachine.example.OrderStatus;
 
 /**
- * 发货后允许的操作
+ * 未收货的操作
  * @author thisdcw
  * @date 2025年12月31日 13:42
  */
-public class UnConfirmState implements OrderState {
+public class UnReceiveState implements OrderState {
 
     @Override
     public void confirmReceipt(OrderContext ctx) {

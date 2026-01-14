@@ -6,7 +6,7 @@ import com.cw.design.statemachine.example.OrderState;
 import com.cw.design.statemachine.example.OrderStatus;
 
 /**
- * 确认退款后允许的操作
+ * 退款完成的操作
  * @author thisdcw
  * @date 2026年01月01日 20:35
  */

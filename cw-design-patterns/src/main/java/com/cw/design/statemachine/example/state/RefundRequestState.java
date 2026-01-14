@@ -6,12 +6,12 @@ import com.cw.design.statemachine.example.OrderState;
 import com.cw.design.statemachine.example.OrderStatus;
 
 /**
- * 申请退款后允许的操作
+ * 申请退款的操作
  *
  * @author thisdcw
  * @date 2026年01月01日 20:35
  */
-public class UnConfirmRefundState implements OrderState {
+public class RefundRequestState implements OrderState {
 
     @Override
     public void cancelRefund(OrderContext ctx) {

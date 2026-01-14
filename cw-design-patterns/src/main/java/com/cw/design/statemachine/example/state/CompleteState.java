@@ -6,7 +6,7 @@ import com.cw.design.statemachine.example.OrderState;
 import com.cw.design.statemachine.example.OrderStatus;
 
 /**
- * 订单已完成允许的操作
+ * 订单已完成的操作
  *
  * @author thisdcw
  * @date 2026年01月01日 20:32
@@ -26,7 +26,7 @@ public class CompleteState implements OrderState {
     @Override
     public void applyRefund(OrderContext ctx) {
         System.out.println("申请退款");
-        ctx.setOrderState(new UnConfirmRefundState());
+        ctx.setOrderState(new RefundRequestState());
         ctx.setOrderStatus(OrderStatus.REFUND_REQUESTED);
     }
 }

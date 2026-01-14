@@ -8,6 +8,10 @@ package com.cw.design.statemachine.example;
  */
 public interface OrderState {
 
+    default void ruleCheck(OrderContext ctx, OrderAction action) {
+
+    }
+
     /**
      * 支付
      */
@@ -40,35 +44,42 @@ public interface OrderState {
     /**
      * 分享
      */
-    default void share(OrderContext ctx){
+    default void share(OrderContext ctx) {
         throw new IllegalStateException("不允许分享");
     }
 
     /**
      * 评论
      */
-    default void comment(OrderContext ctx){
+    default void comment(OrderContext ctx) {
         throw new IllegalStateException("不允许评论");
     }
 
     /**
      * 申请退款
      */
-    default void applyRefund(OrderContext ctx){
+    default void applyRefund(OrderContext ctx) {
         throw new IllegalStateException("不允许申请退款");
+    }
+
+    /**
+     * 同意退款
+     */
+    default void acceptRefund(OrderContext ctx) {
+        throw new IllegalStateException("同意退款");
     }
 
     /**
      * 退款
      */
-    default void refund(OrderContext ctx){
+    default void refund(OrderContext ctx) {
         throw new IllegalStateException("不允许退款");
     }
 
     /**
      * 取消退款
      */
-    default void cancelRefund(OrderContext ctx){
+    default void cancelRefund(OrderContext ctx) {
         throw new IllegalStateException("不允许取消退款");
     }
 }
