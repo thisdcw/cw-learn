@@ -13,10 +13,10 @@
 
     <modules>
         <module>cw-algorithm</module>
-        <module>cw-demo</module>
-        <module>cw-lab</module>
         <module>cw-design-patterns</module>
         <module>cw-plugin</module>
+        <module>cw-scheduled</module>
+        <module>cw-draft</module>
     </modules>
 
     <properties>

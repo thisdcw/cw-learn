@@ -9,7 +9,11 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>cw-demo</artifactId>
+    <artifactId>cw-scheduled</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>scheduled-core</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
