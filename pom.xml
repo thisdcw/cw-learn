@@ -16,10 +16,10 @@
         <module>cw-demo</module>
         <module>cw-lab</module>
         <module>cw-design-patterns</module>
+        <module>cw-plugin</module>
     </modules>
 
     <properties>
-        <java.version>1.8</java.version>
         <springboot.version>2.7.3</springboot.version>
     </properties>
     <dependencies>
