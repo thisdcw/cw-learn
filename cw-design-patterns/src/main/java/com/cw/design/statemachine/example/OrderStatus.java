@@ -1,6 +1,8 @@
 package com.cw.design.statemachine.example;
 
 /**
+ * 订单状态
+ *
  * @author thisdcw
  * @date 2025年12月31日 13:22
  */

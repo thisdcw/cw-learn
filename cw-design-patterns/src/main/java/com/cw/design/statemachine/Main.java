@@ -12,7 +12,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        OrderContext context = new OrderContext(OrderStatus.UN_PAY);
+        System.out.println("测试可退款订单");
+        OrderContext context = new OrderContext(OrderStatus.UN_PAY, true);
         OrderService orderService = new OrderService();
 
         orderService.pay(context);

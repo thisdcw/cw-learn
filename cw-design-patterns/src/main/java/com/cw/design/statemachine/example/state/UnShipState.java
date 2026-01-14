@@ -5,6 +5,8 @@ import com.cw.design.statemachine.example.OrderState;
 import com.cw.design.statemachine.example.OrderStatus;
 
 /**
+ * 支付后允许的操作
+ *
  * @author thisdcw
  * @date 2025年12月31日 13:46
  */
