@@ -245,6 +245,7 @@ public class TimerWheel {
      * - runWithDeadLine: 执行到期的任务
      * - removeTask: 从链表中删除节点
      */
+    @Deprecated
     public class Slot {
 
         /**
